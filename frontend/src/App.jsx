@@ -1,9 +1,17 @@
+import { BrowserRouter, Route, Routes } from "react-router";
+import * as PropTypes from "prop-types";
+import { MainPage } from "./bibleMain/MainPage.jsx";
+
+MainPage.propTypes = { children: PropTypes.node };
+
 function App() {
   return (
     <>
-      <div>frontend</div>
-      <div>frontend</div>
-      <div>frontend</div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={} />
+        </Routes>
+      </BrowserRouter>
       <div>frontend</div>
     </>
   );
