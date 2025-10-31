@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import { Sharing } from "./Sharing.jsx";
+import { SharingList } from "./Sharing/SharingList.jsx";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="sharing" element={<Sharing />} />
+          <Route path="sharing/list" element={<SharingList />} />
         </Routes>
       </BrowserRouter>
     </>
