@@ -1,18 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import * as PropTypes from "prop-types";
-import { MainPage } from "./bibleMain/MainPage.jsx";
-
-MainPage.propTypes = { children: PropTypes.node };
+import { Sharing } from "./Sharing.jsx";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={} />
+          <Route path="sharing" element={<Sharing />} />
         </Routes>
       </BrowserRouter>
-      <div>frontend</div>
     </>
   );
 }
