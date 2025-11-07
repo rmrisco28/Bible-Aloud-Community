@@ -19,7 +19,7 @@ CREATE TABLE `church_sharing`
     `member_name`   VARCHAR(50)   NOT NULL,
     #     나중에 멤버 추가 후 작성
     `content`       VARCHAR(5000) NOT NULL,
-    `created_at`    DATETIME      NOT NULL,
+    `created_at`    DATETIME      NOT NULL DEFAULT NOW(),
     `views`         INT           NOT NULL DEFAULT 0,
     `del_yn`        Boolean       NOT NULL DEFAULT 0,
     CONSTRAINT sharing_id primary key (sharing_id)

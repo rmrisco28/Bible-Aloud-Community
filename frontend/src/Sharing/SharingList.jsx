@@ -1,6 +1,27 @@
-import { Col, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
+import { useNavigate } from "react-router";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 export function SharingList() {
+  const [data, setData] = useState([]);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get("/api/sharing/list")
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        console.log("finally");
+      });
+  }, []);
+
   return (
     <>
       <Row className="justify-content-center">
@@ -17,15 +38,23 @@ export function SharingList() {
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>(ex)no</td>
-                <td>(ex)title</td>
-                <td>(ex)writer</td>
-                <td>(ex)date</td>
-                <td>(ex)looking</td>
-              </tr>
+              {data.map((data) => (
+                <tr
+                  key={data.id}
+                  onClick={() => {
+                    navigate("/sharing/content/" + data.id);
+                  }}
+                >
+                  <td>{data.id}</td>
+                  <td>{data.sharingTitle}</td>
+                  <td>{data.memberName}</td>
+                  <td>{data.createdAt}</td>
+                  <td>{data.views}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
+          <Button onClick={() => navigate("/sharing/add")}>글 작성</Button>
         </Col>
       </Row>
     </>

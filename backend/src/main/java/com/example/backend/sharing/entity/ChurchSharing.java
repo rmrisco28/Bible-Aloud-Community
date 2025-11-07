@@ -34,7 +34,7 @@ public class ChurchSharing {
 
     @ColumnDefault("0")
     @Column(name = "views", nullable = false)
-    private Integer views;
+    private Integer views = 0;
 
     @ColumnDefault("0")
     @Column(name = "del_yn", nullable = false)
