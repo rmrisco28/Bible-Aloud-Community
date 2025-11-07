@@ -25,8 +25,8 @@ export function SharingList() {
   return (
     <>
       <Row className="justify-content-center">
-        <Col xs={12} md={10} lg={8}>
-          <h2 className="mt-5 mb-4">공동체 나눔</h2>
+        <Col xs={10} md={10} lg={8}>
+          <h2 className="my-4">공동체 나눔</h2>
           <table className="table">
             <thead>
               <tr>

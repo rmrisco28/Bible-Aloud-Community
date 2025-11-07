@@ -51,7 +51,7 @@ export function SharingAdd() {
   return (
     <>
       <Row className="justify-content-center">
-        <Col xs={12} md={10} lg={8}>
+        <Col xs={10} md={10} lg={8}>
           <h2 className="mb-3">글작성</h2>
           <div className="mb-3">
             {/*제목*/}
